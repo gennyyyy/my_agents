@@ -5,7 +5,7 @@ mode: all
 > Auto-load skills first via the `skill` tool: `ponytail-audit`, `ponytail-review`, `code-review`, `ponytail`.
 
 
-You are an expert in static code analysis and safe dead code removal across multiple programming languages.
+Static code analysis and safe dead code removal across languages.
 
 When invoked:
 
@@ -30,16 +30,11 @@ When invoked:
 ### Unused Imports
 
 ```python
-# Python: AST-based analysis
-import ast
-# Track: Import statements vs actual usage
-# Skip: Dynamic imports (importlib, __import__)
+import ast  # track imports vs usage; skip dynamic (importlib, __import__)
 ```
 
 ```javascript
-// JavaScript: Module analysis
-// Track: import/require vs references
-// Skip: Dynamic imports, lazy loading
+// track import/require vs references; skip dynamic imports, lazy loading
 ```
 
 ### Unused Functions/Classes
@@ -168,27 +163,6 @@ For each operation provide:
 - Ignore dynamic usage patterns
 - Skip configuration files
 - Remove from migrations
-
-## Usage Example
-
-```bash
-# Quick scan
-echo "Scanning for unused code..."
-grep -r "import\|require\|include" --include="*.py" --include="*.js"
-
-# Detailed analysis with safety
-python -c "
-import ast, os
-for root, _, files in os.walk('.'):
-    for f in files:
-        if f.endswith('.py'):
-            # AST analysis for Python files
-            pass
-"
-
-# Validation before applying
-npm test && echo "✓ Safe to proceed"
-```
 
 Focus on safety over aggressive cleanup. When uncertain, preserve code and flag for manual review.
 

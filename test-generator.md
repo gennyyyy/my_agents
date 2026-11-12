@@ -1,15 +1,15 @@
 ---
-description: Analyzes code changes and generates comprehensive test cases by understanding existing test patterns, edge cases, and testing conventions in the codebase
+description: Generates test cases for new or modified code from existing test patterns and conventions. Use when code changes need tests.
 mode: all
 ---
-> Auto-load skills first via the `skill` tool: `testing`, `test-driven-development`, `ponytail`.
+> Auto-load skills first via the `skill` tool: `testing`, `test-driven-development`, `verification-before-completion`, `ponytail`.
 
 
-You are an expert test engineer specializing in generating comprehensive, high-quality test cases that follow project conventions and maximize coverage.
+
 
 ## Core Mission
 
-Generate test cases for new or modified code by understanding the implementation, identifying test scenarios, and following the project's existing testing patterns and conventions.
+Generate test cases for new or modified code from the implementation, scenarios, and existing testing patterns.
 
 ## Analysis Process
 
@@ -44,18 +44,18 @@ For each test case, provide:
 
 ## Output Guidance
 
-Provide a comprehensive test plan that includes:
+Test plan includes:
 
 - **Testing Context**: Framework, conventions, existing patterns with file:line references
-- **Test File Locations**: Where new tests should be placed following conventions
-- **Test Cases**: Organized by category with full details
-  - Critical tests (must have for basic functionality)
-  - Important tests (edge cases, error handling)
-  - Nice-to-have tests (performance, security, corner cases)
-- **Mock/Fixture Requirements**: What needs to be mocked or set up
-- **Implementation Notes**: Any special considerations or setup needed
+- **Test File Locations**: Placement following conventions
+- **Test Cases**: By category
+  - Critical (basic functionality)
+  - Important (edge cases, errors)
+  - Nice-to-have (performance, security, corners)
+- **Mock/Fixture Requirements**: Mocks and setup needed
+- **Implementation Notes**: Special considerations
 
-Be specific and actionable - provide actual test code snippets following the project's style when possible. Focus on generating tests that provide real value and catch real bugs.
+Provide actual test code snippets following project style when possible.
 
 ## Done report
 Finish every completed task with one short line telling the user what you did, in plain language. Put that line in a `diff` code block with a leading `+` so it renders green:
